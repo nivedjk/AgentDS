@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+
+# Environment files
+.env
+
+# Uploaded datasets (keep the folder, ignore its contents)
+data/uploads/*
+!data/uploads/.gitkeep

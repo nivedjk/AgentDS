@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+/*
+ * AgentDS design tokens — sourced from
+ * docs/frontend-mockups/.../precision_observability_systems_workbench/DESIGN.md
+ * prose sections (Colors / Typography / Shapes / Components), not the YAML
+ * frontmatter's generic Material tokens.
+ */
+:root {
+  --raw-canvas: #0d1117;
+  --raw-canvas-deep: #090d16;
+  --raw-surface: #161b22;
+  --raw-surface-2: #21262d;
+  --raw-line: #30363d;
+  --raw-line-active: #58a6ff;
+
+  --raw-text: #f0f6fc;
+  --raw-text-secondary: #c9d1d9;
+  --raw-text-muted: #8b949e;
+
+  --raw-success: #3fb950;
+  --raw-success-strong: #238636;
+  --raw-warning: #d29922;
+  --raw-warning-strong: #9e6a03;
+  --raw-error: #f85149;
+  --raw-error-strong: #da3633;
+  --raw-info: #388bfd;
+  --raw-info-strong: #1f6feb;
+}
+
+@theme inline {
+  --color-canvas: var(--raw-canvas);
+  --color-canvas-deep: var(--raw-canvas-deep);
+  --color-surface: var(--raw-surface);
+  --color-surface-2: var(--raw-surface-2);
+  --color-line: var(--raw-line);
+  --color-line-active: var(--raw-line-active);
+
+  --color-text: var(--raw-text);
+  --color-text-secondary: var(--raw-text-secondary);
+  --color-text-muted: var(--raw-text-muted);
+
+  --color-success: var(--raw-success);
+  --color-success-strong: var(--raw-success-strong);
+  --color-warning: var(--raw-warning);
+  --color-warning-strong: var(--raw-warning-strong);
+  --color-error: var(--raw-error);
+  --color-error-strong: var(--raw-error-strong);
+  --color-info: var(--raw-info);
+  --color-info-strong: var(--raw-info-strong);
+
+  --font-sans: var(--font-ui-sans);
+  --font-mono: var(--font-data-mono);
+
+  /* Shape scale — YAML frontmatter `rounded` block */
+  --radius-badge: 0.125rem; /* 2px */
+  --radius-control: 0.25rem; /* 4px */
+  --radius-panel: 0.375rem; /* 6px */
+
+  /* Layout scale — YAML frontmatter `spacing` block */
+  --spacing-sidebar: 15rem; /* 240px */
+  --spacing-dock: 1.75rem; /* 28px */
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--color-canvas-deep);
+}
+
+body {
+  color: var(--color-text);
+  font-family: var(--font-ui-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Telemetry / Data family: enforced tabular figures per DESIGN.md's
+   "Tabular Alignment Rule". */
+.font-mono,
+[data-mono] {
+  font-feature-settings:
+    "tnum" on,
+    "zero" on;
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-info) 30%, transparent);
+}
+
+a {
+  color: inherit;
+}
+
+/* Minimal styling for the rendered Module 7 FinalReport.markdown document
+   (react-markdown + remark-gfm output) — no typography plugin installed,
+   just enough structure to make headings/tables/lists/quotes legible. */
+.prose-doc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+.prose-doc > :first-child {
+  margin-top: 0;
+}
+.prose-doc h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 1.5rem 0 0.75rem;
+}
+.prose-doc h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 1.5rem 0 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-line);
+}
+.prose-doc h2:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+.prose-doc h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 1rem 0 0.4rem;
+}
+.prose-doc p {
+  margin: 0.6rem 0;
+}
+.prose-doc ul,
+.prose-doc ol {
+  margin: 0.6rem 0;
+  padding-left: 1.25rem;
+}
+.prose-doc li {
+  margin: 0.2rem 0;
+}
+.prose-doc blockquote {
+  margin: 0.75rem 0;
+  padding: 0.5rem 0.9rem;
+  border-left: 2px solid var(--color-info);
+  background: color-mix(in srgb, var(--color-info) 8%, transparent);
+  color: var(--color-text-secondary);
+}
+.prose-doc code {
+  font-family: var(--font-data-mono), monospace;
+  font-size: 0.8em;
+  background: var(--color-surface-2);
+  border-radius: var(--radius-badge);
+  padding: 0.1em 0.35em;
+}
+.prose-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.8rem;
+}
+.prose-doc th,
+.prose-doc td {
+  border: 1px solid var(--color-line);
+  padding: 0.35rem 0.6rem;
+  text-align: left;
+}
+.prose-doc th {
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.prose-doc hr {
+  border: none;
+  border-top: 1px solid var(--color-line);
+  margin: 1rem 0;
+}
+.prose-doc strong {
+  color: var(--color-text);
+}

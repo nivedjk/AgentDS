@@ -1,0 +1,5 @@
+-r requirements.txt
+
+pytest
+# httpx is now a direct requirements.txt dependency (app.agents._llm_client's
+# Ollama transport); it's also what fastapi.testclient.TestClient needs.

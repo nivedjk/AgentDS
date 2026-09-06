@@ -1,0 +1,501 @@
+customer_age,tenure_months,tenure_days,contract_type,payment_method,monthly_charges,num_support_calls,paperless_billing,region,churned
+50,14,420,One year,Mailed check,72.17,1,1,East,0
+58,64,1920,Two year,Credit card,46.96,1,0,,0
+37,59,1770,One year,Credit card,62.78,1,1,South,0
+62,9,270,Month-to-month,Mailed check,89.44,2,1,West,1
+70,71,2130,Month-to-month,Bank transfer,37.18,2,0,North,1
+24,38,1140,Two year,Mailed check,86.24,4,1,East,0
+25,45,1350,Month-to-month,Mailed check,78.72,0,1,South,1
+29,4,120,Two year,Mailed check,76.94,2,0,East,0
+38,63,1890,One year,Electronic check,18.0,0,0,East,0
+37,67,2010,Month-to-month,Electronic check,67.42,1,0,North,0
+66,55,1650,Month-to-month,Bank transfer,86.21,3,0,North,1
+35,13,390,Month-to-month,Credit card,50.93,1,0,East,1
+73,38,1140,Month-to-month,Electronic check,72.26,2,1,West,1
+64,30,900,Month-to-month,Bank transfer,18.0,3,1,South,0
+76,28,840,Month-to-month,Credit card,86.78,2,0,East,1
+79,39,1170,One year,Mailed check,53.44,1,1,North,0
+22,51,1530,Two year,Electronic check,,2,0,South,1
+60,52,1560,One year,Bank transfer,23.93,1,0,,0
+71,18,540,One year,Electronic check,87.31,1,0,North,1
+20,67,2010,Two year,Bank transfer,64.08,1,1,West,0
+28,32,960,Month-to-month,Mailed check,90.19,1,1,West,1
+36,53,1590,Month-to-month,Bank transfer,46.86,2,0,West,0
+30,62,1860,One year,Electronic check,54.54,3,0,East,0
+67,25,750,Month-to-month,Mailed check,126.06,0,0,North,1
+26,61,1830,Month-to-month,Mailed check,49.25,1,0,West,1
+75,6,180,Month-to-month,Bank transfer,52.35,0,1,North,1
+40,22,660,Month-to-month,Electronic check,63.09,3,1,South,1
+54,51,1530,Two year,Credit card,44.44,2,1,South,0
+43,54,1620,One year,Electronic check,99.76,5,1,East,0
+39,70,2100,Month-to-month,Electronic check,113.13,1,1,,0
+71,30,900,Month-to-month,Electronic check,52.4,1,0,West,0
+40,2,60,Month-to-month,Electronic check,26.85,0,0,North,1
+78,32,960,Month-to-month,Mailed check,99.3,2,0,West,1
+57,56,1680,Month-to-month,Credit card,97.71,6,0,East,1
+40,9,270,One year,Bank transfer,90.54,0,1,South,0
+71,13,390,Month-to-month,Electronic check,98.91,1,0,South,1
+35,30,900,Month-to-month,Electronic check,48.31,1,0,North,1
+39,33,990,Month-to-month,Electronic check,65.79,1,1,South,1
+73,32,960,Two year,Bank transfer,35.4,0,0,East,0
+29,38,1140,Month-to-month,Mailed check,34.55,1,1,North,0
+72,44,1320,Month-to-month,Credit card,94.53,2,1,West,1
+18,44,1320,Two year,Bank transfer,53.2,1,1,East,0
+18,30,900,Month-to-month,Bank transfer,,3,1,South,1
+26,71,2130,Two year,Bank transfer,71.85,2,0,South,0
+56,35,1050,One year,Bank transfer,53.99,1,0,West,1
+70,49,1470,One year,Electronic check,89.95,0,1,South,0
+70,48,1440,Month-to-month,Electronic check,115.03,3,1,West,1
+56,28,840,Month-to-month,Mailed check,82.15,1,0,South,1
+57,46,1380,Month-to-month,Mailed check,39.57,3,0,East,0
+79,51,1530,Two year,Electronic check,79.28,4,1,West,0
+76,35,1050,Month-to-month,Mailed check,104.39,1,0,West,1
+22,34,1020,One year,Bank transfer,57.67,1,1,North,0
+52,43,1290,Month-to-month,Electronic check,50.66,0,0,South,1
+40,30,900,Month-to-month,Electronic check,95.41,3,1,East,1
+26,54,1620,Month-to-month,Electronic check,73.5,1,0,South,1
+67,26,780,Month-to-month,Electronic check,,2,1,South,1
+51,7,210,Two year,Credit card,60.51,4,1,,1
+58,36,1080,Month-to-month,Electronic check,51.11,2,0,West,0
+50,65,1950,Two year,Electronic check,77.41,2,1,South,0
+22,20,600,One year,Electronic check,72.74,2,0,South,0
+71,23,690,One year,Mailed check,98.76,2,1,West,0
+42,18,540,One year,Electronic check,87.74,2,1,East,0
+31,66,1980,One year,Mailed check,30.91,1,0,South,0
+57,11,330,Month-to-month,Electronic check,80.17,1,1,West,1
+36,32,960,Month-to-month,Electronic check,92.42,0,1,East,1
+60,32,960,Month-to-month,Credit card,81.4,1,0,East,0
+49,41,1230,Month-to-month,Electronic check,95.75,2,0,West,0
+46,21,630,Month-to-month,Bank transfer,56.26,2,0,North,0
+24,55,1650,Two year,Mailed check,46.23,2,0,West,0
+29,60,1800,Month-to-month,Mailed check,93.25,3,1,North,0
+71,31,930,One year,Credit card,43.36,4,1,North,1
+77,61,1830,Month-to-month,Electronic check,18.0,4,1,West,1
+52,9,270,Two year,Credit card,95.63,4,0,South,0
+46,25,750,One year,Credit card,51.9,0,1,North,0
+29,63,1890,Month-to-month,Bank transfer,62.35,2,1,East,1
+62,44,1320,Two year,Electronic check,35.05,2,0,South,1
+58,13,390,Two year,Bank transfer,36.86,2,1,South,1
+51,65,1950,Two year,Bank transfer,41.09,0,1,West,0
+34,63,1890,One year,Credit card,60.98,2,1,East,0
+23,26,780,Month-to-month,Electronic check,79.25,0,1,North,0
+78,14,420,Month-to-month,Credit card,18.0,2,1,East,0
+32,40,1200,Two year,Credit card,88.8,2,1,North,1
+58,42,1260,One year,Electronic check,40.45,0,1,South,0
+21,32,960,Month-to-month,Electronic check,43.34,6,1,North,1
+60,51,1530,Two year,Electronic check,86.95,1,1,West,0
+29,47,1410,One year,Credit card,68.13,1,1,North,0
+61,56,1680,One year,Credit card,31.59,1,1,East,0
+30,69,2070,Month-to-month,Credit card,116.11,1,1,South,0
+48,54,1620,Month-to-month,Bank transfer,48.48,4,0,East,1
+43,10,300,Month-to-month,Bank transfer,76.18,1,0,,1
+49,1,30,Month-to-month,Bank transfer,75.0,2,0,North,1
+37,69,2070,Two year,Bank transfer,105.28,0,0,South,0
+38,58,1740,Month-to-month,Credit card,58.61,6,0,East,1
+40,48,1440,Month-to-month,Bank transfer,95.2,2,1,North,1
+57,18,540,Month-to-month,Electronic check,51.45,1,0,West,0
+68,57,1710,One year,Mailed check,98.05,4,1,West,0
+40,8,240,Month-to-month,Electronic check,50.93,1,1,East,1
+19,46,1380,Month-to-month,Bank transfer,,0,1,West,0
+30,27,810,Month-to-month,Bank transfer,117.4,4,0,South,1
+24,62,1860,Month-to-month,Mailed check,77.92,4,0,East,1
+56,49,1470,Two year,Credit card,72.74,1,1,South,1
+68,24,720,One year,Bank transfer,126.05,2,0,North,0
+31,57,1710,Month-to-month,Electronic check,79.03,0,0,North,1
+51,51,1530,Month-to-month,Electronic check,49.6,0,1,East,1
+47,18,540,Two year,Electronic check,88.37,1,0,North,0
+45,19,570,Month-to-month,Electronic check,40.46,0,1,East,0
+72,28,840,One year,Electronic check,98.21,1,0,South,0
+34,37,1110,One year,Mailed check,100.15,5,0,South,0
+56,20,600,Month-to-month,Credit card,55.68,0,1,West,1
+51,49,1470,Month-to-month,Electronic check,54.3,2,1,West,1
+72,38,1140,One year,Credit card,,2,0,South,0
+31,15,450,Two year,Bank transfer,70.35,1,0,South,0
+75,50,1500,Month-to-month,Credit card,45.56,3,0,,0
+71,5,150,Two year,Mailed check,84.2,0,1,East,1
+45,66,1980,Month-to-month,Electronic check,18.95,5,0,East,1
+69,57,1710,One year,Credit card,59.18,1,0,North,0
+58,7,210,Two year,Electronic check,59.9,2,1,East,1
+37,58,1740,Month-to-month,Electronic check,63.17,5,0,East,1
+70,24,720,Month-to-month,Credit card,77.68,3,1,North,0
+19,48,1440,Two year,Bank transfer,39.3,1,1,West,0
+26,17,510,Month-to-month,Electronic check,84.71,1,0,East,0
+73,23,690,One year,Electronic check,65.5,1,0,East,0
+67,2,60,One year,Credit card,53.74,0,1,West,0
+36,47,1410,Month-to-month,Electronic check,35.83,0,0,South,0
+79,42,1260,One year,Bank transfer,40.42,2,1,West,0
+58,6,180,Month-to-month,Electronic check,79.01,5,0,West,1
+33,20,600,Month-to-month,Credit card,45.9,2,1,East,1
+71,48,1440,Month-to-month,Electronic check,71.6,1,0,East,1
+79,57,1710,Month-to-month,Mailed check,,0,0,West,1
+67,41,1230,Month-to-month,Electronic check,95.82,2,0,South,0
+56,12,360,Two year,Bank transfer,109.01,2,1,West,0
+71,44,1320,One year,Credit card,62.59,1,0,South,1
+67,16,480,Month-to-month,Electronic check,42.87,1,1,West,1
+48,32,960,Month-to-month,Electronic check,,2,1,West,1
+65,35,1050,Two year,Bank transfer,77.74,0,0,East,0
+70,16,480,Month-to-month,Bank transfer,98.1,0,0,North,0
+20,58,1740,Two year,Electronic check,70.28,3,0,West,0
+46,52,1560,Month-to-month,Bank transfer,99.89,1,1,East,0
+76,8,240,Month-to-month,Mailed check,91.16,2,0,East,1
+34,33,990,Two year,Credit card,87.91,2,1,East,0
+56,9,270,One year,Electronic check,82.59,0,0,West,0
+47,53,1590,One year,Bank transfer,79.94,1,1,East,0
+54,28,840,Month-to-month,Bank transfer,75.83,1,0,South,1
+38,26,780,Two year,Bank transfer,75.65,2,0,West,0
+57,18,540,Month-to-month,Mailed check,94.75,2,0,East,1
+65,7,210,Two year,Bank transfer,57.2,3,1,South,0
+63,10,300,Month-to-month,Bank transfer,113.39,1,1,North,1
+69,39,1170,Month-to-month,Mailed check,67.34,2,0,South,1
+33,52,1560,Month-to-month,Electronic check,94.63,0,1,West,1
+26,45,1350,Two year,Credit card,67.74,2,0,South,0
+51,17,510,Month-to-month,Bank transfer,63.83,3,0,West,0
+28,66,1980,Two year,Electronic check,120.81,1,1,West,0
+56,47,1410,One year,Bank transfer,62.27,0,1,West,0
+41,64,1920,One year,Electronic check,38.07,2,1,South,0
+62,1,30,One year,Mailed check,52.15,3,0,West,0
+46,5,150,Two year,Credit card,62.07,0,0,East,0
+52,5,150,Month-to-month,Mailed check,123.88,5,0,,1
+77,55,1650,Month-to-month,Electronic check,75.17,1,0,South,1
+56,27,810,Month-to-month,Electronic check,93.37,1,1,East,1
+76,19,570,Month-to-month,Electronic check,44.96,0,1,West,1
+33,43,1290,Month-to-month,Electronic check,78.82,0,0,West,0
+77,50,1500,Two year,Electronic check,86.79,1,0,West,0
+31,32,960,Two year,Electronic check,115.04,1,0,North,0
+63,27,810,Month-to-month,Electronic check,52.59,0,0,North,0
+20,28,840,One year,Mailed check,85.09,4,1,North,1
+59,23,690,Month-to-month,Electronic check,77.56,2,0,West,0
+72,27,810,One year,Bank transfer,44.46,1,0,South,0
+34,35,1050,One year,Credit card,69.51,0,0,East,0
+27,24,720,Month-to-month,Electronic check,63.41,1,1,South,0
+41,38,1140,Two year,Bank transfer,18.0,3,0,North,0
+22,46,1380,Month-to-month,Mailed check,84.97,2,1,,0
+18,50,1500,One year,Electronic check,83.51,4,1,South,1
+44,1,30,One year,Electronic check,59.03,4,0,South,1
+69,46,1380,Month-to-month,Credit card,36.54,2,1,North,0
+43,23,690,Month-to-month,Mailed check,107.0,3,0,,1
+35,49,1470,Month-to-month,Credit card,76.65,2,0,East,0
+31,69,2070,One year,Electronic check,95.42,2,1,West,0
+22,28,840,Two year,Bank transfer,105.26,1,1,North,0
+42,8,240,One year,Credit card,56.98,1,0,East,0
+37,49,1470,Month-to-month,Credit card,90.3,2,1,South,1
+45,24,720,Two year,Electronic check,63.97,0,1,East,0
+38,25,750,Two year,Mailed check,68.44,0,1,South,0
+54,44,1320,Two year,Mailed check,67.86,1,0,West,0
+62,44,1320,Month-to-month,Bank transfer,69.97,2,0,East,1
+18,2,60,Two year,Electronic check,97.85,1,1,North,0
+18,33,990,Month-to-month,Electronic check,73.1,0,1,West,0
+35,27,810,Month-to-month,Credit card,66.16,2,1,East,0
+32,40,1200,Month-to-month,Mailed check,63.09,1,0,West,0
+23,45,1350,Month-to-month,Mailed check,78.53,1,1,West,0
+73,2,60,Month-to-month,Credit card,47.63,1,1,South,1
+23,5,150,Month-to-month,Electronic check,57.43,4,1,East,0
+71,36,1080,One year,Electronic check,68.69,2,0,East,0
+22,60,1800,Month-to-month,Mailed check,55.85,1,1,South,1
+56,16,480,One year,Electronic check,67.04,2,0,North,1
+41,9,270,Month-to-month,Electronic check,54.73,3,0,West,1
+52,28,840,One year,Bank transfer,120.1,2,1,South,1
+50,19,570,Month-to-month,Credit card,103.23,2,0,North,0
+31,6,180,Month-to-month,Bank transfer,81.25,0,1,West,1
+24,66,1980,Two year,Bank transfer,68.66,1,0,South,0
+72,47,1410,Month-to-month,Electronic check,124.77,1,1,North,0
+63,57,1710,Two year,Bank transfer,78.07,0,0,South,0
+65,64,1920,One year,Bank transfer,67.83,2,1,West,0
+56,46,1380,One year,Bank transfer,77.58,4,0,East,1
+49,26,780,Month-to-month,Credit card,77.65,0,0,East,0
+70,1,30,One year,Bank transfer,105.26,2,0,South,0
+27,8,240,Month-to-month,Electronic check,69.53,2,1,South,1
+55,23,690,Two year,Bank transfer,122.48,1,1,South,0
+31,45,1350,Two year,Mailed check,47.95,1,1,West,0
+58,47,1410,Two year,Electronic check,,2,0,West,0
+41,10,300,Month-to-month,Bank transfer,44.95,3,0,South,1
+44,19,570,Month-to-month,Credit card,115.43,3,0,South,1
+38,64,1920,Month-to-month,Electronic check,,2,1,West,1
+54,21,630,Month-to-month,Mailed check,,1,0,West,1
+21,9,270,One year,Bank transfer,93.11,1,1,North,0
+65,18,540,One year,Mailed check,101.38,3,0,South,1
+43,26,780,Month-to-month,Electronic check,42.2,2,0,North,1
+78,36,1080,Two year,Mailed check,61.35,3,0,South,0
+45,36,1080,One year,Mailed check,35.13,6,0,West,0
+25,8,240,Month-to-month,Bank transfer,73.43,2,0,East,0
+35,9,270,One year,Bank transfer,67.47,1,0,South,1
+46,15,450,Two year,Electronic check,61.28,1,0,North,1
+41,23,690,Month-to-month,Credit card,52.89,0,0,North,1
+34,69,2070,One year,Credit card,60.35,1,1,West,0
+38,20,600,One year,Electronic check,51.34,2,0,East,1
+63,26,780,One year,Electronic check,83.22,2,1,North,0
+41,51,1530,Month-to-month,Electronic check,107.9,1,0,South,0
+27,25,750,One year,Credit card,21.73,0,0,East,0
+56,71,2130,One year,Credit card,67.1,1,1,East,0
+63,35,1050,Two year,Electronic check,59.55,1,0,East,1
+48,26,780,Two year,Electronic check,82.31,2,1,East,0
+62,55,1650,Month-to-month,Electronic check,46.21,1,0,North,0
+30,57,1710,One year,Mailed check,,1,1,West,0
+26,47,1410,Two year,Credit card,44.01,1,1,East,0
+67,10,300,Two year,Electronic check,87.42,2,0,North,0
+66,21,630,Month-to-month,Electronic check,72.48,2,0,West,1
+49,42,1260,Month-to-month,Mailed check,65.96,3,0,East,1
+48,27,810,One year,Mailed check,79.25,3,1,North,0
+46,31,930,Month-to-month,Bank transfer,63.84,1,1,West,0
+31,21,630,One year,Mailed check,31.15,1,1,North,0
+62,21,630,Two year,Electronic check,84.89,3,0,South,0
+41,35,1050,Month-to-month,Mailed check,77.21,1,1,North,1
+64,59,1770,Month-to-month,Credit card,66.15,3,1,West,0
+45,26,780,Month-to-month,Bank transfer,94.62,1,1,West,1
+70,53,1590,One year,Electronic check,100.46,1,0,North,0
+70,70,2100,Month-to-month,Credit card,42.69,0,0,South,0
+68,10,300,Month-to-month,Electronic check,50.47,2,1,West,1
+34,66,1980,Month-to-month,Credit card,108.68,5,1,South,1
+59,21,630,One year,Electronic check,105.47,2,1,East,1
+64,7,210,Two year,Credit card,51.54,1,1,East,0
+62,59,1770,Month-to-month,Electronic check,40.48,0,0,,0
+72,1,30,Month-to-month,Mailed check,54.06,2,0,East,1
+27,71,2130,Month-to-month,Bank transfer,57.55,0,0,West,0
+58,15,450,Month-to-month,Mailed check,30.4,1,1,North,0
+61,44,1320,Month-to-month,Electronic check,70.78,3,0,West,1
+40,18,540,Month-to-month,Electronic check,38.0,1,1,South,1
+33,62,1860,Month-to-month,Electronic check,39.74,0,0,North,1
+53,51,1530,Month-to-month,Electronic check,92.9,1,0,North,1
+33,70,2100,One year,Electronic check,52.92,2,0,East,0
+54,57,1710,One year,Electronic check,68.21,2,1,West,0
+25,53,1590,Month-to-month,Mailed check,85.73,3,0,North,0
+42,68,2040,Month-to-month,Mailed check,90.33,1,1,South,1
+42,46,1380,One year,Bank transfer,61.57,2,0,South,0
+63,16,480,Month-to-month,Electronic check,71.1,1,1,West,0
+19,16,480,Month-to-month,Electronic check,49.36,2,0,South,1
+40,47,1410,Month-to-month,Electronic check,113.68,3,0,East,1
+58,27,810,Month-to-month,Bank transfer,86.25,2,0,East,1
+48,54,1620,Two year,Electronic check,42.42,1,0,South,0
+64,45,1350,Month-to-month,Mailed check,70.1,1,0,East,1
+71,3,90,Month-to-month,Bank transfer,87.84,1,1,North,0
+66,66,1980,Two year,Mailed check,,2,0,West,1
+38,70,2100,One year,Credit card,115.73,1,1,West,0
+25,22,660,Month-to-month,Credit card,104.31,0,1,North,0
+23,21,630,Month-to-month,Electronic check,56.52,1,0,South,1
+57,29,870,Two year,Bank transfer,67.77,2,0,North,0
+25,58,1740,Month-to-month,Electronic check,37.96,3,1,South,1
+69,2,60,One year,Electronic check,,1,1,South,1
+53,13,390,Month-to-month,Mailed check,73.78,2,1,West,0
+20,50,1500,One year,Bank transfer,137.59,1,0,West,1
+67,30,900,One year,Credit card,72.44,4,1,South,1
+29,32,960,Two year,Electronic check,18.0,4,1,East,0
+79,67,2010,One year,Bank transfer,53.2,1,0,South,0
+34,57,1710,Month-to-month,Mailed check,72.81,1,0,East,0
+52,8,240,Month-to-month,Electronic check,38.6,1,1,West,1
+46,17,510,Month-to-month,Credit card,48.32,3,0,West,1
+39,19,570,One year,Bank transfer,60.86,2,1,North,0
+28,47,1410,Month-to-month,Electronic check,,2,0,East,1
+21,31,930,Month-to-month,Credit card,65.87,2,0,West,0
+51,48,1440,Month-to-month,Electronic check,47.77,2,1,South,1
+78,16,480,One year,Electronic check,89.69,0,1,East,0
+39,33,990,Two year,Electronic check,56.51,1,0,North,0
+36,26,780,Month-to-month,Credit card,57.52,2,0,North,1
+58,14,420,Month-to-month,Electronic check,35.51,0,1,South,0
+79,15,450,One year,Credit card,50.35,2,0,South,0
+50,29,870,One year,Bank transfer,86.29,2,1,West,0
+78,49,1470,One year,Electronic check,29.56,2,0,West,0
+60,53,1590,Two year,Bank transfer,,5,0,East,0
+67,55,1650,Two year,Mailed check,87.94,0,1,East,0
+33,14,420,Two year,Bank transfer,60.57,1,0,North,0
+52,42,1260,One year,Bank transfer,75.99,2,1,North,0
+61,7,210,Month-to-month,Bank transfer,42.08,2,0,South,0
+40,10,300,One year,Credit card,102.76,1,0,South,0
+63,33,990,Month-to-month,Electronic check,97.53,0,0,South,1
+41,50,1500,One year,Credit card,75.89,3,0,East,1
+62,17,510,One year,Mailed check,26.12,2,1,East,1
+46,13,390,One year,Credit card,43.85,2,1,South,0
+22,57,1710,Month-to-month,Credit card,94.42,0,0,East,1
+24,43,1290,Month-to-month,Credit card,112.83,1,1,North,0
+76,59,1770,Month-to-month,Electronic check,77.42,2,1,West,0
+57,7,210,Month-to-month,Mailed check,101.18,3,1,East,1
+53,68,2040,Two year,Credit card,54.81,1,0,South,0
+65,58,1740,Month-to-month,Credit card,65.27,4,0,South,1
+34,60,1800,Month-to-month,Mailed check,70.03,2,0,South,1
+40,8,240,Month-to-month,Credit card,80.58,0,1,South,0
+44,46,1380,One year,Mailed check,31.78,0,1,East,1
+58,39,1170,Month-to-month,Mailed check,93.52,1,1,West,1
+50,14,420,Two year,Bank transfer,103.06,0,0,West,0
+34,66,1980,Two year,Mailed check,41.28,0,1,North,0
+50,59,1770,Month-to-month,Mailed check,36.12,3,1,East,0
+41,59,1770,Month-to-month,Mailed check,78.76,2,1,West,0
+33,52,1560,One year,Mailed check,53.64,1,0,South,0
+29,13,390,Two year,Electronic check,18.0,0,1,East,0
+34,54,1620,Month-to-month,Electronic check,90.21,1,0,West,1
+51,33,990,One year,Bank transfer,73.89,2,0,North,0
+40,50,1500,Two year,Bank transfer,58.08,0,0,South,0
+44,43,1290,Two year,Bank transfer,122.84,2,0,North,1
+66,59,1770,Month-to-month,Credit card,73.47,2,0,West,0
+61,37,1110,Month-to-month,Electronic check,51.16,4,0,East,1
+45,22,660,Two year,Electronic check,72.53,2,1,South,0
+53,48,1440,Month-to-month,Electronic check,44.0,0,1,North,0
+20,48,1440,Month-to-month,Electronic check,50.96,3,1,North,0
+43,21,630,One year,Bank transfer,79.66,0,1,South,0
+46,37,1110,Month-to-month,Mailed check,56.15,1,0,West,0
+36,48,1440,One year,Electronic check,58.73,0,0,West,0
+30,24,720,Month-to-month,Bank transfer,111.72,2,1,South,1
+63,13,390,Two year,Electronic check,91.49,3,0,South,1
+18,24,720,Month-to-month,Electronic check,90.07,2,1,West,1
+78,60,1800,One year,Bank transfer,83.22,1,0,North,0
+78,12,360,Month-to-month,Bank transfer,82.11,1,0,East,1
+56,28,840,Month-to-month,Electronic check,106.41,2,1,East,1
+36,35,1050,Month-to-month,Bank transfer,69.51,2,1,East,1
+36,57,1710,Month-to-month,Electronic check,116.39,2,1,West,0
+51,27,810,Month-to-month,Mailed check,46.21,2,0,North,1
+59,71,2130,One year,Bank transfer,63.62,3,1,South,1
+40,30,900,Month-to-month,Electronic check,35.54,1,1,West,0
+45,33,990,Month-to-month,Electronic check,61.41,1,0,South,1
+21,61,1830,Two year,Bank transfer,82.96,1,0,North,0
+72,33,990,Two year,Bank transfer,106.28,0,0,South,0
+73,49,1470,Two year,Electronic check,53.42,2,0,West,0
+34,26,780,Month-to-month,Bank transfer,70.13,0,0,West,1
+76,49,1470,Month-to-month,Electronic check,61.02,0,0,West,0
+70,43,1290,Month-to-month,Credit card,51.54,0,0,South,0
+29,70,2100,Month-to-month,Electronic check,40.27,1,1,South,0
+27,29,870,Month-to-month,Electronic check,71.52,2,1,North,1
+43,16,480,Month-to-month,Electronic check,26.7,4,0,North,1
+60,10,300,Month-to-month,Credit card,72.76,1,0,South,1
+41,37,1110,Month-to-month,Electronic check,70.52,4,1,West,1
+63,36,1080,Two year,Bank transfer,53.56,1,1,East,0
+28,7,210,Month-to-month,Credit card,44.73,1,1,South,1
+75,1,30,Month-to-month,Credit card,35.39,5,1,South,1
+59,28,840,One year,Electronic check,116.78,1,0,North,0
+33,3,90,Month-to-month,Mailed check,36.45,1,1,South,0
+66,68,2040,Month-to-month,Bank transfer,108.94,2,0,South,1
+43,57,1710,Month-to-month,Bank transfer,85.0,2,0,West,0
+65,7,210,Month-to-month,Electronic check,60.9,2,1,North,1
+61,56,1680,One year,Electronic check,41.07,2,0,West,0
+59,54,1620,Month-to-month,Electronic check,96.06,2,0,South,1
+25,52,1560,Month-to-month,Electronic check,113.24,0,0,North,1
+19,62,1860,One year,Bank transfer,46.65,1,0,East,0
+61,51,1530,Two year,Electronic check,62.53,1,1,East,0
+32,37,1110,Month-to-month,Electronic check,96.29,4,1,West,1
+22,52,1560,Month-to-month,Electronic check,78.39,1,1,East,0
+49,57,1710,Month-to-month,Electronic check,120.0,1,1,West,0
+75,42,1260,Two year,Electronic check,55.75,0,1,North,0
+61,32,960,Two year,Credit card,83.56,3,1,North,0
+36,41,1230,Month-to-month,Mailed check,38.73,4,0,East,1
+41,26,780,Two year,Electronic check,122.4,0,1,South,0
+61,29,870,Month-to-month,Bank transfer,51.74,2,0,West,1
+45,36,1080,Month-to-month,Electronic check,18.0,1,1,South,0
+52,54,1620,Month-to-month,Electronic check,66.86,1,0,West,0
+70,14,420,Two year,Credit card,66.51,1,0,West,1
+21,31,930,Month-to-month,Credit card,117.89,4,0,West,0
+19,22,660,Month-to-month,Bank transfer,61.53,3,1,North,1
+73,11,330,One year,Electronic check,69.68,1,0,West,1
+34,22,660,Month-to-month,Electronic check,84.84,0,1,,1
+68,22,660,Month-to-month,Electronic check,109.66,1,0,South,1
+35,71,2130,Month-to-month,Electronic check,68.42,2,0,West,0
+70,28,840,Two year,Electronic check,95.99,3,1,North,0
+79,24,720,One year,Electronic check,82.95,1,1,South,0
+75,29,870,Two year,Bank transfer,62.59,2,1,West,0
+32,17,510,One year,Electronic check,71.94,3,0,South,1
+50,65,1950,One year,Electronic check,70.72,1,1,West,0
+20,67,2010,Two year,Credit card,47.1,2,1,East,0
+34,28,840,One year,Electronic check,100.34,2,0,East,1
+43,10,300,One year,Electronic check,35.36,2,1,South,0
+20,2,60,Month-to-month,Electronic check,99.28,1,1,North,1
+58,69,2070,Month-to-month,Credit card,93.86,3,1,West,0
+29,60,1800,One year,Bank transfer,67.67,1,0,North,0
+27,61,1830,Month-to-month,Mailed check,50.86,2,1,North,0
+58,42,1260,Two year,Bank transfer,64.34,0,0,North,0
+70,46,1380,One year,Electronic check,81.82,1,1,North,1
+79,55,1650,Month-to-month,Electronic check,88.58,2,0,East,1
+30,31,930,Two year,Bank transfer,77.17,0,0,North,0
+66,59,1770,Month-to-month,Credit card,94.8,1,1,North,0
+61,15,450,Month-to-month,Credit card,56.06,1,0,East,1
+68,32,960,Month-to-month,Bank transfer,75.86,2,0,North,1
+28,8,240,Two year,Mailed check,30.79,1,0,South,0
+47,56,1680,One year,Electronic check,89.09,4,0,West,1
+72,8,240,Two year,Credit card,,0,1,West,0
+53,36,1080,Month-to-month,Electronic check,59.61,2,1,South,0
+30,25,750,Two year,Electronic check,99.04,0,0,West,1
+18,71,2130,One year,Bank transfer,87.29,2,1,West,0
+63,29,870,One year,Credit card,18.0,6,0,West,0
+22,11,330,Two year,Credit card,,1,0,North,0
+69,66,1980,Month-to-month,Mailed check,33.62,1,0,South,0
+58,40,1200,Month-to-month,Electronic check,96.67,2,0,East,1
+33,39,1170,One year,Electronic check,132.23,4,1,North,1
+31,45,1350,Two year,Credit card,57.04,0,1,South,0
+23,71,2130,Month-to-month,Credit card,71.86,0,0,South,0
+38,2,60,One year,Electronic check,63.72,4,1,West,1
+54,52,1560,Month-to-month,Credit card,,2,1,West,1
+37,33,990,One year,Mailed check,86.11,4,1,South,1
+48,11,330,One year,Electronic check,102.18,4,0,West,1
+56,65,1950,Month-to-month,Mailed check,45.31,3,1,East,0
+47,40,1200,One year,Electronic check,,0,1,North,0
+33,65,1950,Month-to-month,Mailed check,46.71,3,0,South,0
+66,12,360,Two year,Electronic check,76.93,2,1,East,0
+62,48,1440,Month-to-month,Bank transfer,98.96,0,1,East,0
+46,3,90,Month-to-month,Mailed check,87.83,3,0,West,1
+29,70,2100,One year,Credit card,46.54,2,0,East,0
+48,68,2040,Month-to-month,Credit card,52.45,1,0,West,0
+40,63,1890,One year,Electronic check,58.44,3,1,South,0
+48,24,720,Month-to-month,Electronic check,,3,0,East,1
+25,50,1500,One year,Credit card,98.67,0,0,East,0
+46,14,420,One year,Mailed check,37.7,2,0,West,0
+21,60,1800,Two year,Electronic check,81.67,0,0,West,0
+43,8,240,Month-to-month,Electronic check,85.25,4,0,West,0
+61,53,1590,Month-to-month,Credit card,83.96,5,1,West,1
+27,47,1410,One year,Bank transfer,81.66,2,0,South,0
+25,21,630,One year,Electronic check,107.96,4,0,West,1
+36,33,990,Month-to-month,Mailed check,82.2,2,0,,1
+74,34,1020,One year,Mailed check,91.42,3,0,South,0
+34,1,30,Month-to-month,Mailed check,84.09,0,0,East,0
+76,4,120,Month-to-month,Credit card,114.83,3,0,East,0
+33,51,1530,Two year,Credit card,22.5,0,0,North,0
+21,49,1470,Month-to-month,Electronic check,102.05,2,0,East,0
+66,19,570,Month-to-month,Electronic check,63.47,2,1,,1
+25,32,960,One year,Mailed check,62.98,2,0,West,0
+25,56,1680,One year,Credit card,45.76,1,1,West,0
+51,49,1470,One year,Bank transfer,23.28,2,1,North,0
+30,35,1050,Two year,Bank transfer,60.45,0,0,East,0
+55,62,1860,Month-to-month,Bank transfer,52.82,3,1,North,0
+50,39,1170,One year,Electronic check,82.35,3,0,East,1
+62,1,30,Two year,Credit card,33.19,1,0,West,0
+37,33,990,One year,Electronic check,105.79,0,0,,1
+35,18,540,One year,Bank transfer,76.8,2,0,,0
+32,48,1440,Month-to-month,Electronic check,63.8,1,0,South,0
+64,8,240,One year,Mailed check,52.26,2,1,South,1
+41,71,2130,Month-to-month,Credit card,50.32,2,0,West,0
+70,44,1320,One year,Mailed check,41.75,1,0,West,0
+49,57,1710,Month-to-month,Electronic check,56.39,0,0,West,1
+67,33,990,Month-to-month,Mailed check,70.15,1,1,North,0
+59,5,150,One year,Bank transfer,65.57,2,0,South,1
+60,31,930,Month-to-month,Electronic check,34.64,0,1,West,1
+78,36,1080,Month-to-month,Electronic check,63.35,2,1,South,1
+46,30,900,Two year,Electronic check,47.67,6,1,West,0
+70,17,510,Month-to-month,Mailed check,74.0,1,0,North,0
+69,15,450,Two year,Mailed check,116.62,1,0,North,0
+44,8,240,One year,Mailed check,85.63,1,1,West,0
+61,36,1080,Month-to-month,Electronic check,62.17,1,0,South,1
+46,14,420,One year,Bank transfer,29.38,1,0,North,0
+59,45,1350,Month-to-month,Electronic check,34.63,1,1,South,0
+43,18,540,Month-to-month,Credit card,27.83,1,1,North,0
+48,31,930,Two year,Credit card,88.15,3,0,West,0
+32,69,2070,One year,Mailed check,50.87,1,0,West,0
+57,38,1140,One year,Mailed check,71.57,0,1,North,0
+77,53,1590,One year,Credit card,54.45,1,0,East,0
+39,49,1470,One year,Electronic check,72.28,2,0,South,0
+22,61,1830,One year,Credit card,105.04,0,0,East,0
+61,4,120,Month-to-month,Electronic check,52.88,1,0,East,0
+30,50,1500,Month-to-month,Bank transfer,61.48,1,0,East,1
+61,17,510,Month-to-month,Electronic check,49.84,1,0,North,0
+59,23,690,Month-to-month,Bank transfer,91.86,1,1,North,1
+76,65,1950,Month-to-month,Credit card,44.36,1,1,West,1
+54,28,840,Two year,Electronic check,41.68,1,0,North,0
+25,37,1110,Month-to-month,Credit card,35.31,1,1,East,0
+35,32,960,Month-to-month,Mailed check,34.79,1,0,South,0
+34,8,240,Month-to-month,Mailed check,81.77,1,0,South,0
+76,21,630,One year,Mailed check,134.23,2,0,North,1
+71,11,330,Two year,Electronic check,45.12,1,1,North,0
+43,30,900,Two year,Electronic check,93.79,1,1,East,1
+72,1,30,Month-to-month,Bank transfer,76.28,3,1,North,1
+54,55,1650,Month-to-month,Electronic check,42.45,2,1,East,1
+37,39,1170,Two year,Bank transfer,63.08,0,1,West,0
+23,6,180,Month-to-month,Credit card,64.18,4,1,East,1
+74,71,2130,One year,Credit card,52.73,6,1,West,0
+73,20,600,Month-to-month,Credit card,118.27,1,0,East,1
+64,25,750,Two year,Credit card,22.35,3,0,East,0
+24,35,1050,Month-to-month,Electronic check,79.53,0,1,North,0
+52,38,1140,Month-to-month,Credit card,78.29,1,1,East,1
+42,49,1470,Month-to-month,Electronic check,55.51,0,1,North,0

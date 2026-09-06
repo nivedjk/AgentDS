@@ -1,0 +1,19 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+python-multipart
+pandas
+pydantic
+anthropic
+httpx
+scikit-learn
+xgboost
+lightgbm
+joblib
+shap==0.51.0
+reportlab==5.0.1
+python-docx==1.2.0
+
+# No LangGraph and no database driver here on purpose. AgentDS is a solo build:
+# the pipeline is plain FastAPI with direct calls between plain Python classes,
+# and datasets live on local disk. This is a deliberate scope decision.
