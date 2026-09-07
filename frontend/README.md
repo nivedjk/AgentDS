@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AgentDS — Frontend
 
-## Getting Started
+A Next.js dashboard that walks a dataset through AgentDS's seven-agent pipeline:
+upload a CSV, then step through Data Understanding → Cleaning → Visualization →
+Model Recommendation → Training → Explainability → Report, with each stage's
+status and output rendered as you go.
 
-First, run the development server:
+See the repo root [`README.md`](../README.md) for the project overview and the
+[`backend/README.md`](../backend/README.md) for the API.
+
+## Prerequisite
+
+The backend must be running on <http://localhost:8000> — its CORS is pinned to
+`http://localhost:3000`, so the frontend only works on that origin during
+development.
+
+## Setup
 
 ```bash
+cd agentds/frontend
+
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`.env.local`:
 
-## Learn More
+| Var | Default | Purpose |
+|-----|---------|---------|
+| `NEXT_PUBLIC_API_BASE_URL` | `http://localhost:8000` | Backend base URL, consumed in `lib/api.ts` |
 
-To learn more about Next.js, take a look at the following resources:
+## Routes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Path | Screen |
+|------|--------|
+| `/` | Upload a CSV + list existing datasets |
+| `/datasets/[id]` | Pipeline overview — per-stage status, links onward |
+| `/datasets/[id]/understanding` | Module 1 — Data Understanding report |
+| `/datasets/[id]/cleaning` | Module 2 — Cleaning step log |
+| `/datasets/[id]/visualization` | Module 3 — Plotly charts + insights |
+| `/datasets/[id]/recommendation` | Module 4 — Model shortlist + rationale |
+| `/datasets/[id]/training` | Module 5 — Leaderboard + CV / test metrics |
+| `/datasets/[id]/explainability` | Module 6 — SHAP feature importance |
+| `/datasets/[id]/report` | Module 7 — Final report + PDF / Word download |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Stage order and labels are defined once in `lib/pipeline.ts`.
 
-## Deploy on Vercel
+## Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js 16** (App Router) + **React 19**
+- **Tailwind CSS v4** (`@import "tailwindcss"` in `app/globals.css`)
+- **Plotly** via `react-plotly.js` for the visualization stage
+- **`react-markdown` + `remark-gfm`** for the rendered final report
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Design tokens
+
+Dark, GitHub-flavored palette defined in `app/globals.css` as CSS custom
+properties (`--raw-canvas`, `--raw-surface`, `--raw-info`, `--raw-success`, …)
+and exposed to Tailwind via `@theme inline`. Fonts: Inter (UI) and JetBrains
+Mono (data / telemetry), loaded through `next/font` in `app/layout.tsx`.
+
+## Scripts
+
+| Command | Does |
+|---------|------|
+| `npm run dev` | Start the dev server on `:3000` |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint |
