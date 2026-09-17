@@ -18,7 +18,7 @@ from app.agents.data_understanding import (
     DataUnderstandingReport,
     quick_stats,
 )
-from app.storage.dataset_store import get_dataset_path, save_report
+from app.storage.dataset_store import get_dataset_path, get_report, save_report
 
 router = APIRouter(prefix="/datasets", tags=["data-understanding"])
 
@@ -36,7 +36,9 @@ def load_dataframe(dataset_id: str) -> pd.DataFrame:
 @router.post("/{dataset_id}/quick-stats", response_model=DataUnderstandingReport)
 def quick_stats_endpoint(dataset_id: str) -> DataUnderstandingReport:
     df = load_dataframe(dataset_id)
-    return quick_stats(df, dataset_id)
+    report = quick_stats(df, dataset_id)
+    save_report(dataset_id, report.model_dump())
+    return report
 
 
 @router.post("/{dataset_id}/analyze", response_model=DataUnderstandingReport)
@@ -53,3 +55,18 @@ def analyze_endpoint(dataset_id: str) -> DataUnderstandingReport:
     report = agent.run(df, dataset_id)
     save_report(dataset_id, report.model_dump())
     return report
+
+
+@router.get("/{dataset_id}/understanding", response_model=DataUnderstandingReport)
+def get_understanding_endpoint(dataset_id: str) -> DataUnderstandingReport:
+    """A previously-computed report (from /analyze or /quick-stats, whichever
+    ran and was cached last), or 404 if neither has ever run for this dataset.
+    Lets the frontend show whatever is already cached - agentic or heuristic -
+    instead of unconditionally overwriting it with a fresh /quick-stats call."""
+    cached = get_report(dataset_id)
+    if cached is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No understanding report found for id {dataset_id!r}.",
+        )
+    return DataUnderstandingReport(**cached)

@@ -1,63 +1,99 @@
 @import "tailwindcss";
 
 /*
- * AgentDS design tokens — sourced from
- * docs/frontend-mockups/.../precision_observability_systems_workbench/DESIGN.md
- * prose sections (Colors / Typography / Shapes / Components), not the YAML
- * frontmatter's generic Material tokens.
+ * AgentDS design tokens — "Evolved Console" (Direction A).
+ *
+ * Semantic architecture: a small primitive set (surface / hairline / fg /
+ * accent / status) that every component binds to via Tailwind utilities
+ * (bg-panel, text-fg-muted, border-hairline, …).
+ *
+ * Palette: "Graphite" — a cool near-black ground with a single blue accent.
  */
 :root {
-  --raw-canvas: #0d1117;
-  --raw-canvas-deep: #090d16;
-  --raw-surface: #161b22;
-  --raw-surface-2: #21262d;
-  --raw-line: #30363d;
-  --raw-line-active: #58a6ff;
+  /* -- surfaces: page ground → sunken → panel → raised (dropdowns, popovers) -- */
+  --bg: #0c0e12;
+  --bg-sunken: #08090b;
+  --panel: #14171d;
+  --panel-raised: #1b1f27;
 
-  --raw-text: #f0f6fc;
-  --raw-text-secondary: #c9d1d9;
-  --raw-text-muted: #8b949e;
+  /* -- hairlines: default edge → emphasis → focus ring -- */
+  --hairline: #262b36;
+  --hairline-strong: #333a48;
+  --focus: #4c8df6;
 
-  --raw-success: #3fb950;
-  --raw-success-strong: #238636;
-  --raw-warning: #d29922;
-  --raw-warning-strong: #9e6a03;
-  --raw-error: #f85149;
-  --raw-error-strong: #da3633;
-  --raw-info: #388bfd;
-  --raw-info-strong: #1f6feb;
+  /* -- text, four tiers: primary → supporting → metadata → disabled -- */
+  --fg: #e6e9ef;
+  --fg-muted: #8b93a2;
+  --fg-subtle: #656d7b;
+  --fg-faint: #4a515f;
+
+  /* -- accent: one hue, used sparingly -- */
+  --accent: #4c8df6;
+  --accent-hover: #6ba1f8;
+  --accent-surface: color-mix(in srgb, var(--accent) 14%, transparent);
+  --accent-line: color-mix(in srgb, var(--accent) 42%, transparent);
+
+  /* -- status: separate from the accent, each with a weak surface wash -- */
+  --ok: #3fb950;
+  --ok-surface: color-mix(in srgb, var(--ok) 15%, transparent);
+  --warn: #e0a23c;
+  --warn-surface: color-mix(in srgb, var(--warn) 15%, transparent);
+  --danger: #f04e4e;
+  --danger-surface: color-mix(in srgb, var(--danger) 14%, transparent);
 }
 
 @theme inline {
-  --color-canvas: var(--raw-canvas);
-  --color-canvas-deep: var(--raw-canvas-deep);
-  --color-surface: var(--raw-surface);
-  --color-surface-2: var(--raw-surface-2);
-  --color-line: var(--raw-line);
-  --color-line-active: var(--raw-line-active);
+  /* -- semantic surface/edge/text/accent/status → Tailwind utilities -- */
+  --color-bg: var(--bg);
+  --color-bg-sunken: var(--bg-sunken);
+  --color-panel: var(--panel);
+  --color-panel-raised: var(--panel-raised);
 
-  --color-text: var(--raw-text);
-  --color-text-secondary: var(--raw-text-secondary);
-  --color-text-muted: var(--raw-text-muted);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-focus: var(--focus);
 
-  --color-success: var(--raw-success);
-  --color-success-strong: var(--raw-success-strong);
-  --color-warning: var(--raw-warning);
-  --color-warning-strong: var(--raw-warning-strong);
-  --color-error: var(--raw-error);
-  --color-error-strong: var(--raw-error-strong);
-  --color-info: var(--raw-info);
-  --color-info-strong: var(--raw-info-strong);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-fg-faint: var(--fg-faint);
 
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-surface: var(--accent-surface);
+  --color-accent-line: var(--accent-line);
+
+  --color-ok: var(--ok);
+  --color-ok-surface: var(--ok-surface);
+  --color-warn: var(--warn);
+  --color-warn-surface: var(--warn-surface);
+  --color-danger: var(--danger);
+  --color-danger-surface: var(--danger-surface);
+
+  /* -- fonts (provided by app/layout.tsx via next/font) -- */
   --font-sans: var(--font-ui-sans);
   --font-mono: var(--font-data-mono);
 
-  /* Shape scale — YAML frontmatter `rounded` block */
+  /* -- type scale: 14px base, ~1.25 ratio -- */
+  --text-caption: 0.6875rem; /* 11 */
+  --text-caption--line-height: 1rem;
+  --text-body: 0.875rem; /* 14 */
+  --text-body--line-height: 1.5rem;
+  --text-h4: 1rem; /* 16 */
+  --text-h4--line-height: 1.3rem;
+  --text-h3: 1.125rem; /* 18 */
+  --text-h3--line-height: 1.4rem;
+  --text-h2: 1.375rem; /* 22 */
+  --text-h2--line-height: 1.65rem;
+  --text-h1: 1.75rem; /* 28 */
+  --text-h1--line-height: 2rem;
+
+  /* -- shape scale -- */
   --radius-badge: 0.125rem; /* 2px */
   --radius-control: 0.25rem; /* 4px */
   --radius-panel: 0.375rem; /* 6px */
 
-  /* Layout scale — YAML frontmatter `spacing` block */
+  /* -- layout scale -- */
   --spacing-sidebar: 15rem; /* 240px */
   --spacing-dock: 1.75rem; /* 28px */
 }
@@ -65,16 +101,17 @@
 html,
 body {
   height: 100%;
-  background: var(--color-canvas-deep);
+  background: var(--color-bg-sunken);
 }
 
 body {
-  color: var(--color-text);
+  color: var(--color-fg);
   font-family: var(--font-ui-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Telemetry / Data family: enforced tabular figures per DESIGN.md's
-   "Tabular Alignment Rule". */
+/* Telemetry / data family: tabular figures so columns don't jitter. */
 .font-mono,
 [data-mono] {
   font-feature-settings:
@@ -82,42 +119,60 @@ body {
     "zero" on;
 }
 
+/* Headings: optical tracking + no orphan lines. Size/weight stay with the
+   utilities so per-screen hierarchy decisions win. */
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.011em;
+  text-wrap: balance;
+}
+
 * {
-  border-color: var(--color-line);
+  border-color: var(--color-hairline);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 3px;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--color-info) 30%, transparent);
+  background: color-mix(in srgb, var(--color-accent) 30%, transparent);
 }
 
 a {
   color: inherit;
 }
 
-/* Minimal styling for the rendered Module 7 FinalReport.markdown document
-   (react-markdown + remark-gfm output) — no typography plugin installed,
-   just enough structure to make headings/tables/lists/quotes legible. */
+/* -----------------------------------------------------------------------
+   Rendered Module 7 FinalReport.markdown (react-markdown + remark-gfm).
+   No typography plugin — just enough structure to read cleanly.
+   --------------------------------------------------------------------- */
 .prose-doc {
   font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--color-text-secondary);
+  line-height: 1.65;
+  color: var(--color-fg-muted);
+  text-wrap: pretty;
 }
 .prose-doc > :first-child {
   margin-top: 0;
 }
 .prose-doc h1 {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-fg);
   margin: 1.5rem 0 0.75rem;
 }
 .prose-doc h2 {
-  font-size: 1.05rem;
+  font-size: 1.0625rem;
   font-weight: 600;
-  color: var(--color-text);
-  margin: 1.5rem 0 0.5rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--color-line);
+  color: var(--color-fg);
+  margin: 1.75rem 0 0.5rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--color-hairline);
 }
 .prose-doc h2:first-child {
   border-top: none;
@@ -127,58 +182,62 @@ a {
 .prose-doc h3 {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-fg);
   margin: 1rem 0 0.4rem;
 }
 .prose-doc p {
-  margin: 0.6rem 0;
+  margin: 0.65rem 0;
+  max-width: 68ch;
 }
 .prose-doc ul,
 .prose-doc ol {
-  margin: 0.6rem 0;
+  margin: 0.65rem 0;
   padding-left: 1.25rem;
 }
 .prose-doc li {
   margin: 0.2rem 0;
 }
 .prose-doc blockquote {
-  margin: 0.75rem 0;
+  margin: 0.85rem 0;
   padding: 0.5rem 0.9rem;
-  border-left: 2px solid var(--color-info);
-  background: color-mix(in srgb, var(--color-info) 8%, transparent);
-  color: var(--color-text-secondary);
+  border-left: 2px solid var(--color-accent-line);
+  background: var(--color-accent-surface);
+  color: var(--color-fg-muted);
 }
 .prose-doc code {
-  font-family: var(--font-data-mono), monospace;
+  font-family: var(--font-data-mono), ui-monospace, monospace;
   font-size: 0.8em;
-  background: var(--color-surface-2);
+  background: var(--color-panel-raised);
   border-radius: var(--radius-badge);
   padding: 0.1em 0.35em;
 }
 .prose-doc table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0.75rem 0;
+  margin: 0.85rem 0;
   font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
 }
 .prose-doc th,
 .prose-doc td {
-  border: 1px solid var(--color-line);
-  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--color-hairline);
+  padding: 0.4rem 0.65rem;
   text-align: left;
 }
 .prose-doc th {
-  background: var(--color-surface-2);
-  color: var(--color-text-muted);
+  background: var(--color-panel-raised);
+  color: var(--color-fg-subtle);
   font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+  font-weight: 500;
 }
 .prose-doc hr {
   border: none;
-  border-top: 1px solid var(--color-line);
+  border-top: 1px solid var(--color-hairline);
   margin: 1rem 0;
 }
 .prose-doc strong {
-  color: var(--color-text);
+  color: var(--color-fg);
+  font-weight: 600;
 }

@@ -37,3 +37,11 @@ yarn-error.log*
 # --- OS / editor ---
 .DS_Store
 *.pem
+
+# --- Claude Code local tooling: downloaded/compiled, not authored here.
+# Re-fetched by `npx impeccable install` if needed; keeping the ~18MB
+# platform binary + generated data + minified bundles out of history.
+.claude/skills/impeccable/scripts/bin/
+.claude/skills/impeccable/scripts/data/
+.claude/skills/impeccable/scripts/live-browser.js
+.claude/skills/impeccable/scripts/modern-screenshot.umd.js

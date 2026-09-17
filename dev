@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# AgentDS dev launcher (macOS / Linux / WSL) — thin wrapper over run.py.
+# Usage: ./dev  [--backend-only | --frontend-only | --no-open]
+set -e
+cd "$(dirname "$0")"
+exec "$(command -v python3 || command -v python)" run.py "$@"

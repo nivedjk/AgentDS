@@ -83,8 +83,26 @@ a solo build, not oversights.
 
 ## Quickstart
 
-You need **Python 3.11+** and **Node 20+**. Run the two services in separate
-terminals.
+You need **Python 3.11+** and **Node 20+**.
+
+### One command — both services
+
+From the repo root, after the one-time setup below (a backend venv with
+`requirements.txt` installed, and `npm install` in `frontend/`):
+
+```bash
+python run.py          # Windows / WSL / macOS / Linux — same command
+# or:  ./dev            (macOS / Linux / WSL)
+#     dev.cmd           (Windows)
+```
+
+It starts the backend (`:8000`) and frontend (`:3000`), waits for the UI to come
+up, prints **<http://localhost:3000>**, and opens it. `Ctrl+C` stops both.
+Flags: `--backend-only`, `--frontend-only`, `--no-open`. It picks up
+`backend/venv` (or `.venv`) automatically and creates `backend/.env` from the
+example on first run.
+
+### Or run the two services yourself, in separate terminals
 
 ### Backend — API on `:8000`
 

@@ -15,6 +15,7 @@ from app.agents.cleaning import CleaningAgent, CleaningReport
 from app.agents.data_understanding import DataUnderstandingAgent
 from app.routers.analyze import load_dataframe
 from app.storage.dataset_store import (
+    get_cleaning_report,
     get_report,
     save_cleaning_report,
     save_dataset,
@@ -22,6 +23,15 @@ from app.storage.dataset_store import (
 )
 
 router = APIRouter(prefix="/datasets", tags=["cleaning"])
+
+
+@router.get("/{dataset_id}/clean")
+def get_clean_endpoint(dataset_id: str) -> dict:
+    """Retrieve previously-saved cleaning report from disk, or 404."""
+    report = get_cleaning_report(dataset_id)
+    if report is None:
+        raise HTTPException(status_code=404, detail=f"No cleaning report found for id {dataset_id!r}.")
+    return report
 
 
 @router.post("/{dataset_id}/clean", response_model=CleaningReport)

@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const uiSans = Inter({
+// IBM Plex is a non-variable Google font family, so explicit weights are
+// required. 400 body / 500 labels / 600 headings covers the type scale.
+const uiSans = IBM_Plex_Sans({
   variable: "--font-ui-sans",
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
   display: "swap",
 });
 
-const dataMono = JetBrains_Mono({
+const dataMono = IBM_Plex_Mono({
   variable: "--font-data-mono",
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -26,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-theme="dark"
       className={`${uiSans.variable} ${dataMono.variable} h-full`}
     >
-      <body className="min-h-full bg-canvas-deep text-text antialiased">
+      <body className="min-h-full bg-bg-sunken text-fg antialiased">
         {children}
       </body>
     </html>

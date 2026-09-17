@@ -113,6 +113,122 @@ export async function getArtifactsStatus(
   };
 }
 
+export interface PipelineStageProgress {
+  name?: string;
+  stage_index?: number;
+  status: "pending" | "running" | "completed" | "done" | "error" | "failed" | "skipped";
+  current_operation?: string | null;
+  error: string | null;
+  started_at?: string | null;
+  finished_at?: string | null;
+  duration_seconds?: number | null;
+}
+
+export interface PipelineStatusResponse {
+  pipeline_id?: string;
+  dataset_id: string;
+  status: "idle" | "running" | "completed" | "failed";
+  current_stage: string | null;
+  current_stage_index?: number | null;
+  current_operation?: string | null;
+  current_stage_started_at?: string | null;
+  total_stages?: number;
+  completed_stages_count?: number;
+  progress_percent?: number;
+  stages: Record<string, PipelineStageProgress>;
+  error: string | null;
+  started_at: string | null;
+  finished_at: string | null;
+  total_duration_seconds?: number | null;
+}
+
+/** Format seconds into mm:ss or hh:mm:ss */
+export function formatElapsed(seconds: number): string {
+  if (isNaN(seconds) || seconds < 0) return "00:00";
+  const hrs = Math.floor(seconds / 3600);
+  const mins = Math.floor((seconds % 3600) / 60);
+  const secs = Math.floor(seconds % 60);
+  if (hrs > 0) {
+    return `${hrs.toString().padStart(2, "0")}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+  }
+  return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+}
+
+/** Format finished duration (e.g. 1.4s, 45s, 1m 20s, 10m 15s) */
+export function formatDuration(seconds: number): string {
+  if (isNaN(seconds) || seconds < 0) return "0s";
+  if (seconds < 10) return `${seconds.toFixed(1)}s`;
+  const s = Math.round(seconds);
+  if (s < 60) return `${s}s`;
+  const hrs = Math.floor(s / 3600);
+  const mins = Math.floor((s % 3600) / 60);
+  const secs = s % 60;
+  if (hrs > 0) {
+    return secs > 0 ? `${hrs}h ${mins}m ${secs}s` : `${hrs}h ${mins}m`;
+  }
+  return secs > 0 ? `${mins}m ${secs}s` : `${mins}m`;
+}
+
+/** `POST /datasets/{id}/pipeline/run` — trigger chronological background pipeline run */
+export async function startPipelineRun(datasetId: string): Promise<PipelineStatusResponse> {
+  return request<PipelineStatusResponse>(
+    `/datasets/${encodeURIComponent(datasetId)}/pipeline/run`,
+    { method: "POST" },
+  );
+}
+
+/** `GET /datasets/{id}/pipeline/status` — get running status and per-stage progress */
+export async function getPipelineStatus(datasetId: string): Promise<PipelineStatusResponse> {
+  return request<PipelineStatusResponse>(
+    `/datasets/${encodeURIComponent(datasetId)}/pipeline/status`,
+  );
+}
+
+/** Subscribe to Server-Sent Events for real-time pipeline state updates */
+export function subscribePipelineEvents(
+  datasetId: string,
+  onUpdate: (status: PipelineStatusResponse) => void,
+  onError?: (err: unknown) => void,
+): () => void {
+  if (typeof window === "undefined" || !("EventSource" in window)) {
+    return () => {};
+  }
+
+  const url = `${API_BASE_URL}/datasets/${encodeURIComponent(datasetId)}/pipeline/events`;
+  const es = new EventSource(url);
+
+  const handleMsg = (e: MessageEvent) => {
+    try {
+      const payload = JSON.parse(e.data);
+      if (payload && typeof payload === "object") {
+        onUpdate(payload);
+      }
+    } catch {
+      // ignore JSON parse error on heartbeat
+    }
+  };
+
+  es.addEventListener("SNAPSHOT", handleMsg);
+  es.addEventListener("PIPELINE_STARTED", handleMsg);
+  es.addEventListener("STAGE_STARTED", handleMsg);
+  es.addEventListener("SUBSTAGE_UPDATE", handleMsg);
+  es.addEventListener("STAGE_PROGRESS", handleMsg);
+  es.addEventListener("STAGE_COMPLETED", handleMsg);
+  es.addEventListener("STAGE_FAILED", handleMsg);
+  es.addEventListener("STAGE_SKIPPED", handleMsg);
+  es.addEventListener("PIPELINE_COMPLETED", handleMsg);
+  es.addEventListener("PIPELINE_FAILED", handleMsg);
+  es.onmessage = handleMsg;
+
+  es.onerror = (err) => {
+    if (onError) onError(err);
+  };
+
+  return () => {
+    es.close();
+  };
+}
+
 // ---------------------------------------------------------------------------
 // Module 1 — Data Understanding
 // ---------------------------------------------------------------------------
@@ -154,7 +270,9 @@ export interface DataUnderstandingReport {
 }
 
 /** `POST /datasets/{id}/quick-stats` — deterministic, LLM-free, no API key
- * required. Idempotent and cheap, so it's fine to call on every page load. */
+ * required. Only call this as a fallback when `getUnderstanding` finds
+ * nothing cached yet — it's a fresh recompute, not a cache read, and would
+ * silently overwrite a real /analyze result with the cheaper heuristic one. */
 export async function getQuickStats(
   datasetId: string,
 ): Promise<DataUnderstandingReport> {
@@ -162,6 +280,23 @@ export async function getQuickStats(
     `/datasets/${encodeURIComponent(datasetId)}/quick-stats`,
     { method: "POST" },
   );
+}
+
+/** `GET /datasets/{id}/understanding` — whatever is already cached (from
+ * /analyze or /quick-stats, whichever ran last), or `null` when neither has
+ * ever run for this dataset (backend 404s). Check this before falling back
+ * to `getQuickStats`, so an existing agentic result is never overwritten. */
+export async function getUnderstanding(
+  datasetId: string,
+): Promise<DataUnderstandingReport | null> {
+  const res = await fetch(
+    `${API_BASE_URL}/datasets/${encodeURIComponent(datasetId)}/understanding`,
+  );
+  if (res.status === 404) return null;
+  if (!res.ok) {
+    throw new ApiError(res.status, await extractDetail(res));
+  }
+  return (await res.json()) as DataUnderstandingReport;
 }
 
 // ---------------------------------------------------------------------------
@@ -199,6 +334,20 @@ export async function runClean(datasetId: string): Promise<CleaningReport> {
     `/datasets/${encodeURIComponent(datasetId)}/clean`,
     { method: "POST" },
   );
+}
+
+/** `GET /datasets/{id}/clean` — retrieve previously-computed cleaning report, or null when not built yet (404). */
+export async function getCleaningReport(
+  datasetId: string,
+): Promise<CleaningReport | null> {
+  const res = await fetch(
+    `${API_BASE_URL}/datasets/${encodeURIComponent(datasetId)}/clean`,
+  );
+  if (res.status === 404) return null;
+  if (!res.ok) {
+    throw new ApiError(res.status, await extractDetail(res));
+  }
+  return (await res.json()) as CleaningReport;
 }
 
 // ---------------------------------------------------------------------------

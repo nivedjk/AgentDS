@@ -116,7 +116,13 @@ def get_artifact(dataset_id: str, kind: str) -> dict | None:
     path = artifact_path(dataset_id, kind)
     if not path.is_file():
         return None
-    return json.loads(path.read_text(encoding="utf-8"))
+    text = path.read_text(encoding="utf-8").strip()
+    if not text:
+        return None
+    try:
+        return json.loads(text)
+    except Exception:
+        return None
 
 
 def model_dir(dataset_id: str) -> Path:

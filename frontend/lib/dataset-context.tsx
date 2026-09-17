@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext } from "react";
-import type { DatasetListEntry, PipelineKind } from "@/lib/api";
+import type { DatasetListEntry, PipelineKind, PipelineStatusResponse } from "@/lib/api";
 
 export interface DatasetShellState {
   datasetId: string;
@@ -9,8 +9,11 @@ export interface DatasetShellState {
   present: PipelineKind[];
   missing: PipelineKind[];
   reportBuilt: boolean;
+  pipelineStatus: PipelineStatusResponse | null;
   loading: boolean;
   error: string | null;
+  refreshArtifacts: () => Promise<void>;
+  triggerPipeline: () => Promise<void>;
 }
 
 export const DatasetShellContext = createContext<DatasetShellState | null>(

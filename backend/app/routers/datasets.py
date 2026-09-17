@@ -1,7 +1,10 @@
 """Dataset upload + listing endpoints.
 
 Accepts a raw .csv file, persists it to local disk under a UUID, and hands back
-an id the rest of the pipeline can use to locate it later.
+an id the rest of the pipeline can use to locate it later. Upload only stores
+the file - it does not run anything. Running the pipeline (all stages, via
+POST /{id}/pipeline/run, or one stage at a time via each stage's own POST
+endpoint) is always an explicit, separate call.
 """
 
 from fastapi import APIRouter, File, HTTPException, UploadFile

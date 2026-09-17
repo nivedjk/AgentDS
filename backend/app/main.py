@@ -18,6 +18,7 @@ from app.routers import (  # noqa: E402  (must follow load_dotenv above)
     clean,
     datasets,
     explain,
+    pipeline,
     recommend,
     report,
     status,
@@ -36,6 +37,7 @@ app.add_middleware(
 )
 
 app.include_router(datasets.router)
+app.include_router(pipeline.router)
 app.include_router(analyze.router)
 app.include_router(clean.router)
 app.include_router(recommend.router)

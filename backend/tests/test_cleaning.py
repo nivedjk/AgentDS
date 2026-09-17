@@ -455,6 +455,15 @@ def test_agent_explicit_client_bypasses_provider_selection(monkeypatch):
 @pytest.fixture
 def clean_client(tmp_path, monkeypatch):
     monkeypatch.setenv("AGENTDS_DATA_DIR", str(tmp_path / "uploads"))
+    # POST /datasets/upload used to unconditionally spawn a real daemon thread
+    # (start_pipeline_background) that ran the full chronological pipeline in
+    # the background, independent of this test - it made its own real
+    # check_llm_available()/DataUnderstandingAgent calls using whatever
+    # AGENTDS_LLM_PROVIDER/ANTHROPIC_API_KEY the process env held *at the
+    # moment it got there*, racing whatever a test set up later. Upload no
+    # longer triggers the pipeline at all (POST /{id}/pipeline/run, or each
+    # stage's own endpoint, are the only ways to run anything now), so that
+    # race no longer exists and there is nothing left to neutralize here.
     from app.main import app
 
     tc = TestClient(app)
